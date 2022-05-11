@@ -1,0 +1,44 @@
+# ProjectUMG
+Project Website
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=”UTF-8″ />
+        <title>Adivina el número</title>
+        <script>
+        var minimo = 1;
+        var maximo = 50;
+        var aleatorio = Math.floor(Math.random()* maximo - minimo + 1 ) + minimo;
+        var intentos =0;
+
+        alert('Bienvenido al juego Adivina el número, tienes 5 oportunidades para encontrarlo, si ingresas un número incorrecto se te contará como una oportunidad 😁😁');
+        var nombre =prompt('Por favor dime tu nombre 😉😉');
+        var numero;
+        
+        for (intentos; intentos < 5; intentos++){
+            numero = parseInt(prompt('De acuerdo '+nombre+' 😀😀, ingresa un número entre '+minimo+' y '+maximo));
+
+            if (numero >= minimo && numero <= maximo){
+                if(numero < aleatorio){
+                    alert(nombre+ ', 👆👆 busca más arriba, ahora tienes: '+(4-intentos)+' intentos');
+                    }else if(numero > aleatorio){
+                    alert(nombre+ ', 👇👇 busca más abajo, ahora tienes: '+(4-intentos)+' intentos ');
+                 }else if(numero == aleatorio){
+                    break;
+                }
+                }else{
+                alert(nombre+ ', Te dije que el número debe ser entre '+minimo+' y '+maximo+' 😒😒 te quitaré una oportunidad 😈😈, ahora tienes: '+(4-intentos)+' oportunidades ');
+             }
+             }
+                if (numero == aleatorio){
+                alert('¡¡¡'+nombre+ '... Adivinaste el número en '+(intentos + 1)+' intentos, Felicidades eres genial!!! 😉😎');
+                document.location.reload();   
+                }else{
+                alert(nombre+ ', Se te agotaron tus oportunidades 🤦🤦, vuelve a intentarlo👍👍👏👏');
+                document.location.reload();   
+            }
+        
+        </script>
+    </head>
+        <body> </body>
+</html>
